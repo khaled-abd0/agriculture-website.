@@ -1,0 +1,512 @@
+:root {
+    --i1: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=70");
+    --i2: url("https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1800&q=70");
+    --i3: url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1800&q=70");
+    --i4: url("https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=1800&q=70");
+    --i5: url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1800&q=70");
+    --i6: url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=70");
+    --gold: #e3b64a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    background: #0d2616;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.9
+}
+
+/* ---------- الشكل الأساسي لكل شريحة ---------- */
+.stage {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 7vw 70px;
+    overflow: hidden;
+    isolation: isolate
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: #1f5a36;
+    background-size: cover;
+    background-position: center
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(8, 30, 16, .9) 15%, rgba(8, 30, 16, .55))
+}
+
+.b1 {
+    background-image: var(--i1)
+}
+
+.b2 {
+    background-image: var(--i2)
+}
+
+.b3 {
+    background-image: var(--i3)
+}
+
+.b4 {
+    background-image: var(--i4)
+}
+
+.b5 {
+    background-image: var(--i5)
+}
+
+.b6 {
+    background-image: var(--i6)
+}
+
+.box {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+.at {
+    position: absolute;
+    top: 135vh
+}
+
+/* نقطة وصول روابط التنقل */
+.tag {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+    border: 1px solid rgba(227, 182, 74, .5);
+    padding: 2px 16px;
+    border-radius: 30px;
+    margin-bottom: 14px
+}
+
+h1 {
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 1.15
+}
+
+h2 {
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 10px
+}
+
+h3 {
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color: var(--gold)
+}
+
+p {
+    font-size: 18px;
+    max-width: 640px;
+    color: rgba(255, 255, 255, .88)
+}
+
+.sub {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 4px 0 14px
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 26px
+}
+
+.c3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.c2 {
+    grid-template-columns: 1fr 1fr
+}
+
+.c5 {
+    grid-template-columns: repeat(5, 1fr)
+}
+
+.g {
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .25);
+    backdrop-filter: blur(14px);
+    border-radius: 22px;
+    padding: 20px;
+    transition: .35s
+}
+
+.g:hover {
+    background: rgba(255, 255, 255, .2);
+    transform: translateY(-8px)
+}
+
+.g p {
+    font-size: 15px;
+    line-height: 1.8
+}
+
+.g em {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gold)
+}
+
+.g .n {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1.2
+}
+
+.g ul {
+    list-style: none
+}
+
+.g li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+    font-size: 15px
+}
+
+.g li::before {
+    content: "🌱 "
+}
+
+/* ---------- السنبلة ---------- */
+.hero .box {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 20px
+}
+
+#ear {
+    height: 500px;
+    transform-origin: 50% 100%;
+    animation: sway 6s ease-in-out infinite alternate
+}
+
+@keyframes sway {
+    from {
+        transform: rotate(-3deg)
+    }
+
+    to {
+        transform: rotate(3deg)
+    }
+}
+
+.earwrap {
+    display: flex;
+    justify-content: center;
+    position: relative
+}
+
+.earwrap::before {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    top: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(227, 182, 74, .4), transparent 70%)
+}
+
+/* ---------- الروابط الجانبية ---------- */
+.dots {
+    position: fixed;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    gap: 14px
+}
+
+.dots a {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .35);
+    transition: .3s
+}
+
+.dots a:hover {
+    background: var(--gold);
+    transform: scale(1.5)
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    padding: 16px 5vw;
+    font-weight: 800;
+    pointer-events: none
+}
+
+.bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gold);
+    z-index: 10;
+    transform-origin: right;
+    transform: scaleX(0)
+}
+
+.hint {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    font-size: 14px;
+    opacity: .85;
+    display: none
+}
+
+/* ======================================================
+   السحر: انتقالات مرتبطة بالتمرير
+   (إن لم يدعمها المتصفح تظهر الشرائح تحت بعضها بشكل عادي)
+   ====================================================== */
+@supports (animation-timeline: view()) {
+    .scene {
+        height: 300vh;
+        view-timeline: --t block
+    }
+
+    /* كل شريحة = 3 شاشات تمرير */
+    .stage {
+        position: fixed;
+        inset: 0;
+        min-height: 0;
+        padding-top: 90px;
+        opacity: 0;
+        pointer-events: none;
+        animation: fade linear both;
+        animation-timeline: --t;
+        animation-range: cover 0% cover 100%
+    }
+
+    @keyframes fade {
+        0% {
+            opacity: 0
+        }
+
+        25% {
+            opacity: 1
+        }
+
+        75% {
+            opacity: 1
+        }
+
+        100% {
+            opacity: 0
+        }
+    }
+
+    /* تلاشي متداخل بين الشرائح */
+
+    .bg {
+        animation: zoom linear both;
+        animation-timeline: --t;
+        animation-range: cover 0% cover 100%
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(1.28)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* تقريب هادئ للصورة */
+
+    /* ظهور العناصر واحدًا بعد الآخر أثناء التمرير (--i هو الترتيب) */
+    .a {
+        animation: rise linear both;
+        animation-timeline: --t;
+        animation-range: cover calc(24% + var(--i)*4%) cover calc(36% + var(--i)*4%)
+    }
+
+    @keyframes rise {
+        from {
+            opacity: 0;
+            transform: translateY(60px);
+            filter: blur(14px)
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+            filter: blur(0)
+        }
+    }
+
+    /* العناوين: تظهر كخطوط مفرغة ثم تمتلئ */
+    .t {
+        animation-name: outline
+    }
+
+    @keyframes outline {
+        from {
+            opacity: 0;
+            color: transparent;
+            -webkit-text-stroke: 1.5px #fff;
+            filter: blur(10px);
+            transform: translateY(40px)
+        }
+
+        55% {
+            opacity: 1;
+            color: transparent;
+            -webkit-text-stroke: 1.5px #fff;
+            filter: blur(0)
+        }
+
+        to {
+            opacity: 1;
+            color: #fff;
+            -webkit-text-stroke: 0 #fff;
+            filter: blur(0);
+            transform: none
+        }
+    }
+
+    /* الشريحة الأولى تظهر مع فتح الصفحة (بدون تمرير) */
+    .hero .a {
+        animation: rise .9s ease-out both;
+        animation-timeline: auto;
+        animation-range: normal;
+        animation-delay: calc(var(--i)*.15s)
+    }
+
+    .bar {
+        animation: grow linear both;
+        animation-timeline: scroll(root)
+    }
+
+    @keyframes grow {
+        to {
+            transform: scaleX(1)
+        }
+    }
+
+    .hint {
+        display: block;
+        animation: gone linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0px 250px
+    }
+
+    @keyframes gone {
+        to {
+            opacity: 0
+        }
+    }
+}
+
+/* ---------- الجوال ---------- */
+@media(max-width:900px) {
+    h1 {
+        font-size: 46px
+    }
+
+    h2 {
+        font-size: 30px
+    }
+
+    p {
+        font-size: 16px
+    }
+
+    .hero .box {
+        grid-template-columns: 1fr
+    }
+
+    #ear {
+        height: 230px
+    }
+
+    .cols,
+    .c3,
+    .c2,
+    .c5 {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 16px
+    }
+
+    .g {
+        padding: 12px
+    }
+
+    .g p {
+        font-size: 13px;
+        line-height: 1.6
+    }
+
+    .g li {
+        font-size: 13px;
+        padding: 2px 0
+    }
+
+    .dots {
+        display: none
+    }
+
+    .stage {
+        padding: 80px 6vw 40px
+    }
+}
+
+@media(max-width:560px) {
+    .m {
+        display: none
+    }
+
+    .cols,
+    .c3,
+    .c2,
+    .c5 {
+        grid-template-columns: 1fr
+    }
+}
